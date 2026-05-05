@@ -1,0 +1,3 @@
+langchain_community
+langgraph
+langchain-google-genai
