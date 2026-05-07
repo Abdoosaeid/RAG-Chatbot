@@ -39,3 +39,8 @@ htmlcov/.langgraph_api/
 .venv/
 __pycache__/
 .env
+
+.claude 
+
+
+
