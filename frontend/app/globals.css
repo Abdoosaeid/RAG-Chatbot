@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── CopilotKit v2 theme overrides ── */
+/* Target the actual v2 class: copilotKitChat */
+
+/* Main chat container — transparent bg */
+[data-testid="copilot-chat"] {
+  --copilot-kit-background-color: transparent !important;
+}
+
+/* Scrollable messages area */
+[data-testid="copilot-message-list"] {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+[data-testid="copilot-message-list"]::-webkit-scrollbar {
+  width: 4px;
+}
+
+[data-testid="copilot-message-list"]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+@media (prefers-color-scheme: light) {
+  [data-testid="copilot-message-list"] {
+    scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  }
+
+  [data-testid="copilot-message-list"]::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}

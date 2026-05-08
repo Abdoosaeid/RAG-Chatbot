@@ -1,0 +1,10 @@
+langchain-google-genai
+langgraph
+copilotkit
+langchain-openai
+langchain-core
+dotenv
+ag-ui-langgraph
+fastapi
+uvicorn
+notebook
