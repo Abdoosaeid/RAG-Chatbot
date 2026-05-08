@@ -109,7 +109,7 @@ RAG-Chatbot/
 ## 1. Clone Repository
 
 ```bash
-git clone <your_repo_url>
+git clone https://github.com/Abdoosaeid/RAG-Chatbot.git
 cd RAG-Chatbot
 ```
 
