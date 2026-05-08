@@ -21,6 +21,8 @@ def load_documents(DATA_PATH ="../Data"):
             loader = TextLoader(file_path, encoding="utf-8")
             documents.extend(loader.load())
 
+    return documents        
+
 
 def split_documents(documents):
 
@@ -32,7 +34,7 @@ def split_documents(documents):
 
     return doc_splits
 
-def create_vector_store(doc_splits):
+def vector_store(doc_splits):
 
     embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
 
@@ -47,6 +49,6 @@ def create_vector_store(doc_splits):
 def create_vector_store():
     documents = load_documents()
     doc_splits = split_documents(documents)
-    vectorstore = create_vector_store(doc_splits)
+    vectorstore = vector_store(doc_splits)
 
     return vectorstore
