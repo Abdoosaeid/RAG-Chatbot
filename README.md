@@ -158,7 +158,7 @@ npm install
 
 # Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the `src` directory:
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
