@@ -47,7 +47,7 @@ Final Grounded Response
 <h1 align="center">LangGraph Workflow</h1>
 
 <p align="center">
-  <img src="img/rag_graph.png" width="700"/>
+  <img src="img/rag_graph.png" width="500"/>
 </p>
 
 ---
