@@ -44,9 +44,11 @@ Final Grounded Response
 
 ---
 
-# LangGraph Workflow
+# LangGraph Workflow 
 
-![LangGraph Workflow](img/rag_graph.png)
+<p align="center">
+  <img src="img/rag_graph.png" width="550"/>
+</p>
 
 ---
 
@@ -109,7 +111,7 @@ RAG-Chatbot/
 ## 1. Clone Repository
 
 ```bash
-git clone <your_repo_url>
+git clone https://github.com/Abdoosaeid/RAG-Chatbot.git
 cd RAG-Chatbot
 ```
 
