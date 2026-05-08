@@ -1,90 +1,235 @@
 # RAG-Chatbot
 
-A RAG-powered chatbot using LangGraph, Google Gemini, and CopilotKit. Upload PDFs and ask questions — the agent retrieves relevant passages and generates grounded answers.
+An Agentic Retrieval-Augmented Generation (Agentic RAG) chatbot built with LangGraph, Google Gemini, and CopilotKit.
 
-## Architecture
+Upload documents, ask questions in natural language, and receive context-aware answers grounded in your uploaded data.
 
+This project implements an agentic RAG system where the agent can decide to retrieve documents, rewrite the question, or respond directly depending on the context.
+
+---
+
+# Features
+
+- Document upload & processing
+- Semantic search using vector embeddings
+- Agentic RAG workflow
+- Query rewriting & retrieval loop
+- LangGraph agent workflow
+- Google Gemini integration
+- Interactive chat UI with CopilotKit
+- FastAPI backend
+- Context-aware grounded responses
+
+---
+
+# Agentic RAG Architecture
+
+```text
+User Question
+      ↓
+Generate Query or Direct Response
+      ↓
+Retrieve Relevant Documents
+      ↓
+Generate Answer
+      ↓
+Evaluate Retrieval Quality
+      ↓
+Rewrite Question (if needed)
+      ↓
+Retry Retrieval
+      ↓
+Final Grounded Response
 ```
-PDF Upload → Text Extraction → Chunking → Google Embeddings → FAISS Vector Store → Retrieval Tool → Gemini LLM → Response
-```
 
-## Project Structure
+---
 
-```
+# LangGraph Workflow
+
+![LangGraph Workflow](img/rag_graph.png)
+
+---
+
+# Frontend Preview
+
+![Frontend Preview](img/frontend.png)
+
+---
+
+# Tech Stack
+
+## Backend
+- Python
+- FastAPI
+- LangGraph
+- LangChain
+- Google Gemini
+- Pydantic
+
+## Frontend
+- Next.js
+- React
+- CopilotKit
+
+## Vector & Embeddings
+- Google Generative AI Embeddings
+- In-Memory Vector Store
+
+---
+
+# Project Structure
+
+```text
 RAG-Chatbot/
-├── agent.py              # LangGraph agent + FastAPI server (AG-UI endpoint)
-├── config.py             # Pydantic settings (API keys, LLM params)
-├── models.py             # Gemini LLM initialization
-├── rag.py                # PDF ingestion, embeddings, vector store, retriever tool
-├── requirements.txt      # Python dependencies
-├── langgraph.json        # LangGraph config
-├── .env                  # Environment variables (not in git)
-└── frontend/             # Next.js + CopilotKit UI
-    ├── app/              # Pages and layout
-    ├── package.json
-    └── ...
+├── Data/
+├── frontend/
+├── img/
+│
+├── notebook/
+│
+├── src/
+│   ├── agent.py
+│   ├── config.py
+│   ├── langgraph.json
+│   ├── models.py
+│   ├── nodes.py
+│   ├── rag_pipeline.py
+│   └── tools.py
+│   └── .env
+|
+├── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
-## Setup
+---
 
-### Backend
+# Setup
+
+## 1. Clone Repository
+
+```bash
+git clone <your_repo_url>
+cd RAG-Chatbot
+```
+
+---
+
+## 2. Backend Setup
+
+Create virtual environment:
 
 ```bash
 python -m venv .venv
-.venv/Scripts/activate      # Windows
-# source .venv/bin/activate  # Linux/Mac
+```
 
+Activate environment:
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-### Frontend
+---
+
+## 3. Frontend Setup
 
 ```bash
 cd frontend
 npm install
 ```
 
-### Configuration
+---
 
-Create a `.env` file:
+# Environment Variables
+
+Create a `.env` file in the root directory:
 
 ```env
-GOOGLE_API_KEY=your_google_api_key_here
+GOOGLE_API_KEY=your_google_api_key
 
 # Optional: LangSmith tracing
-LANGCHAIN_API_KEY=your_langsmith_key_here
-LANGCHAIN_TRACING=true
+LANGCHAIN_API_KEY=your_langsmith_api_key
+LANGCHAIN_TRACING_V2=true
 LANGCHAIN_PROJECT=RAG-Chatbot
 ```
 
-## Running
+---
 
-### Backend (FastAPI + LangGraph)
+# Running the Project
+
+## Run Backend
 
 ```bash
-python agent.py
+cd src
+uv run agent.py
 ```
 
-Server runs on `http://localhost:8123`
+Backend server:
 
-### Frontend (CopilotKit)
+```text
+http://localhost:8123
+```
+
+---
+
+## Run Frontend
 
 ```bash
 cd frontend
 npm run dev
 ```
 
-UI runs on `http://localhost:3000`
+Frontend application:
 
-## Key Components
+```text
+http://localhost:3000
+```
 
-| File | Purpose |
-|------|---------|
-| `agent.py` | LangGraph state machine with FastAPI + AG-UI endpoint |
-| `rag.py` | PDF → text → chunks → Google embeddings → FAISS → retriever tool |
-| `config.py` | Centralized settings via Pydantic (`gemini-2.5-flash`) |
-| `models.py` | Gemini chat model factory |
+---
 
-## License
+# How It Works
+
+1. User uploads documents
+2. Text is extracted and chunked
+3. Chunks are converted into embeddings
+4. Embeddings are stored in a vector database
+5. User asks a question
+6. The agent decides whether to retrieve or respond directly
+7. Relevant documents are retrieved
+8. Gemini generates a grounded answer
+9. If retrieval quality is poor, the agent rewrites the question
+10. The retrieval process runs again until a good response is generated
+
+---
+
+# Future Improvements
+
+- Persistent vector database
+- Streaming responses
+- Multi-file support
+- Chat history memory
+- Hybrid search
+- Re-ranking pipeline
+- Authentication system
+- Docker deployment
+- Monitoring & observability
+
+---
+
+# License
 
 MIT
