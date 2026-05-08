@@ -46,13 +46,7 @@ Final Grounded Response
 
 # LangGraph Workflow
 
-<div
-  style={{
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '20px',
-    }}
->
+<div style={{ textAlign: 'center' }}>
   <img
     src="/img/rag_graph.png"
     alt="LangGraph Workflow"
