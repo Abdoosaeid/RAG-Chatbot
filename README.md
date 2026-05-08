@@ -44,15 +44,11 @@ Final Grounded Response
 
 ---
 
-# LangGraph Workflow
+<h1 align="center">LangGraph Workflow</h1>
 
-<div style={{ textAlign: 'center' }}>
-  <img
-    src="/img/rag_graph.png"
-    alt="LangGraph Workflow"
-    width="600"
-  />
-</div>
+<p align="center">
+  <img src="img/rag_graph.png" width="700"/>
+</p>
 
 ---
 
