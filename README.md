@@ -58,11 +58,7 @@ Final Grounded Response
 
 ---
 
-# Chat
 
-![Chat](img/chat.png)
-
----
 # Tech Stack
 
 ## Backend
@@ -205,6 +201,11 @@ Frontend application:
 ```text
 http://localhost:3000
 ```
+
+---
+# Chat Example
+
+![Chat](img/chat.png)
 
 ---
 
