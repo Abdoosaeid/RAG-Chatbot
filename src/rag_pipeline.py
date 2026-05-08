@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-def load_documents(DATA_PATH = "Data"):
+def load_documents(DATA_PATH ="../Data"):
     documents = []
 
     for file_name in os.listdir(DATA_PATH):
