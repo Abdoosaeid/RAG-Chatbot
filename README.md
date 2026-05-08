@@ -58,6 +58,11 @@ Final Grounded Response
 
 ---
 
+# Chat
+
+![Chat](img/chat.png)
+
+---
 # Tech Stack
 
 ## Backend
