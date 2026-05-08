@@ -46,7 +46,9 @@ Final Grounded Response
 
 # LangGraph Workflow
 
-![LangGraph Workflow](img/rag_graph.png)
+<div style={{ textAlign: 'center' }}>
+  <img src="img/rag_graph.png"   />
+</div> 
 
 ---
 
