@@ -7,3 +7,4 @@ dotenv
 ag-ui-langgraph
 fastapi
 uvicorn
+notebook
